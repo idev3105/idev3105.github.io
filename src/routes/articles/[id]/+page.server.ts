@@ -35,8 +35,6 @@ export const load: PageServerLoad = async ({ params }) => {
         throw new Error('Article not found');
     }
 
-    console.log(res);
-
     const data = await res.json();
 
     return {
