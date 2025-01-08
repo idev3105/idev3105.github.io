@@ -3,10 +3,15 @@ import { env } from '$env/dynamic/private'
 
 export const entries: EntryGenerator = async () => {
 
+    const apiKey = env.DEV_TO_API_KEY;
+    if (!apiKey) {
+        throw new Error('API key not found');
+    }
+
     const res = await fetch("https://dev.to/api/articles/me", {
         method: 'GET',
         headers: {
-            'api-key': env.DEV_TO_API_KEY
+            'api-key': apiKey
         }
     });
 
