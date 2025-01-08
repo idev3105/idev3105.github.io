@@ -1,5 +1,7 @@
 <script lang="ts">
 	import '../app.css';
+	import { base } from '$app/paths'
+
 	let { children } = $props();
 </script>
 
@@ -8,8 +10,8 @@
 		<a class="btn btn-ghost text-xl normal-case" href="/">idev's Blog</a>
 	</div>
 	<div class="navbar-end">
-		<a href="/" class="btn btn-link">Home</a>
-		<a href="/about" class="btn btn-link">About</a>
+		<a href={base + '/'} class="btn btn-link">Home</a>
+		<a href={base + '/about'} class="btn btn-link">About</a>
 	</div>
 </header>
 
