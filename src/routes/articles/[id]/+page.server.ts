@@ -1,8 +1,9 @@
 import type { EntryGenerator, PageServerLoad } from './$types';
+import { env } from '$env/dynamic/private';
 
 export const entries: EntryGenerator = async () => {
 
-    const apiKey = "7qxxdCeR9p8vuBNuJiwRv2LX"
+    const apiKey = env.DEV_TO_API_KEY;
     if (!apiKey) {
         throw new Error('API key not found');
     }

@@ -31,7 +31,7 @@ jobs:
           BASE_PATH: '/${{ github.event.repository.name }}'
           DEV_TO_API_KEY: ${{ secrets.DEV_TO_API_KEY }}
         run: |
-          npm run build
+          DEV_TO_API_KEY=$DEV_TO_API_KEY npm run build
 
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3
