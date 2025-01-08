@@ -1,15 +1,15 @@
 <script lang="ts">
-	import type { PageData } from "./$types";
-    import { base } from '$app/paths';
+	import type { PageData } from './$types';
+	import { base } from '$app/paths';
 
-    let { data }: { data: PageData } = $props();
-    const { layout } = data;
+	let { data }: { data: PageData } = $props();
+	const { layout } = data;
 </script>
 
 <main class="container mx-auto">
-	<div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+	<div class="w-full">
 		{#each Object.keys(layout) as name}
-			<div>
+			<div class="mt-8">
 				<h2 class="text-2xl font-bold">{name}</h2>
 				<ul class="mt-2 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
 					{#each layout[name] as article}
