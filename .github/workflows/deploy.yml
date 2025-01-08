@@ -31,7 +31,6 @@ jobs:
           BASE_PATH: '/${{ github.event.repository.name }}'
           DEV_TO_API_KEY: ${{ secrets.DEV_TO_API_KEY }}
         run: |
-          echo "DEV_TO_API_KEY=$DEV_TO_API_KEY" >> .env
           npm run build
 
       - name: Upload Artifacts
