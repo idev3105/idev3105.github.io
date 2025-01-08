@@ -1,5 +1,4 @@
 import type { EntryGenerator, PageServerLoad } from './$types';
-import { env } from '$env/dynamic/private'
 
 export const entries: EntryGenerator = async () => {
 
@@ -16,12 +15,13 @@ export const entries: EntryGenerator = async () => {
     });
 
     if (!res.ok) {
-        throw new Error('Article not found');
+        throw new Error('Articles not found');
     }
 
-    const data = await res.json();
-
-	return data.map((v: {id: number }) => ({id: v.id}));
+    const data : { id: number }[] = await res.json();
+    return data.map((v: {id: number }) => ({
+        id: v.id.toString()
+    }));
 };
 
 export const load: PageServerLoad = async ({ params }) => {
@@ -33,6 +33,8 @@ export const load: PageServerLoad = async ({ params }) => {
     if (!res.ok) {
         throw new Error('Article not found');
     }
+
+    console.log(res);
 
     const data = await res.json();
 
