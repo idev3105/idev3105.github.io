@@ -1,12 +1,12 @@
 import type { EntryGenerator, PageServerLoad } from './$types';
-import { DEV_TO_API_KEY } from '$env/static/private'
+import { env } from '$env/dynamic/private'
 
 export const entries: EntryGenerator = async () => {
 
     const res = await fetch("https://dev.to/api/articles/me", {
         method: 'GET',
         headers: {
-            'api-key': DEV_TO_API_KEY
+            'api-key': env.DEV_TO_API_KEY
         }
     });
 
