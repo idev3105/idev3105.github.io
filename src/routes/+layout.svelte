@@ -7,7 +7,7 @@
 
 <header class="navbar bg-base-300">
 	<div class="navbar-start">
-		<a class="btn btn-ghost text-xl normal-case" href="/">idev's Blog</a>
+		<a class="btn btn-ghost text-xl normal-case" href={base + '/'}>idev's Blog</a>
 	</div>
 	<div class="navbar-end">
 		<a href={base + '/'} class="btn btn-link">Home</a>
