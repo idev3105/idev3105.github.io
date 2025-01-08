@@ -17,6 +17,9 @@ const config = {
 		alias: {
 			'@src': './src',
 			'@src/*': './src/*'
+		},
+		env: {
+			DEV_TO_API_KEY: process.env.DEV_TO_API_KEY
 		}
 	}
 };
