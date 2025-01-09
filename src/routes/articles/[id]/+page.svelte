@@ -16,7 +16,14 @@
 	<h1 class="mt-4 text-3xl font-bold">{title}</h1>
 
 	<!-- Body HTML -->
-	<div class="mt-4">
+	<div class="article-body mt-4">
 		{@html bodyHtml}
 	</div>
 </main>
+
+<style>
+	.article-body img {
+		object-fit: contain;
+		max-height: calc(50vh + 180px);
+	}
+</style>
