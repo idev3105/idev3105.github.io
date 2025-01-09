@@ -7,6 +7,8 @@
 	let { data }: { data: PageData } = $props();
 	const { bio, social } = data;
 
+	const gitHub = $state(social[0]);
+
 	function abbreviateNumber(number: number) {
 		if (number >= 1e9) return (number / 1e9).toFixed(1) + 'B';
 		if (number >= 1e6) return (number / 1e6).toFixed(1) + 'M';
@@ -22,7 +24,7 @@
 		}
 		const githubData = await githubRes.json();
 		const githubFollowers = githubData.followers;
-		social[0].followers = githubFollowers;
+		gitHub.followers = githubFollowers;
 	});
 </script>
 
@@ -37,13 +39,13 @@
 	<p class="text-muted-foreground mt-8 text-sm">Help me grow by following me! 🚀</p>
 	<div class="mt-6 flex flex-col gap-4 sm:flex-row">
 		<a
-			href={social[0].url}
+			href={gitHub.url}
 			target="_blank"
 			rel="noopener noreferrer"
 			class="btn-social flex items-center gap-1"
 		>
 			<GitHub /> GitHub
-			<span class="badge badge-sm">{abbreviateNumber(social[0].followers)}</span>
+			<span class="badge badge-sm">{abbreviateNumber(gitHub.followers)}</span>
 		</a>
 		<a
 			href={social[1].url}
