@@ -11,13 +11,13 @@
 		{#each Object.keys(layout) as name}
 			<div class="mt-8">
 				<h2 class="text-2xl font-bold">{name}</h2>
-				<ul class="mt-2 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+				<ul class="mt-2 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
 					{#each layout[name] as article}
 						<li>
 							<a href={`${base}/articles/${article.id}`}>
-								<div class="card w-96 bg-base-100 shadow-xl">
+								<div class="card w-full bg-base-100 shadow-xl">
 									<figure>
-										<img src={article.coverImage} alt="Cover Image" />
+										<img src={article.coverImage} alt="Article cover" />
 									</figure>
 									<div class="card-body">
 										<h2 class="card-title">
