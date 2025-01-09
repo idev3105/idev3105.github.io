@@ -12,7 +12,7 @@ const gatherFollowerCount = async (): Promise<number> => {
 
 		const response = await fetch(url, {
 			headers: {
-				'api-key': env.API_TOKEN || ''
+				'api-key': env.DEV_TO_API_KEY || ''
 			}
 		});
 
