@@ -12,3 +12,11 @@ body {
 	object-fit: contain;
 	max-height: calc(50vh + 180px);
 }
+
+.article-body p {
+	margin: 0 0 1.25rem 0;
+}
+
+.article-body strong {
+	margin: 0 0 1.25rem 0;
+}
