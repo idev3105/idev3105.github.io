@@ -22,8 +22,4 @@
 </main>
 
 <style>
-	.article-body img {
-		object-fit: contain;
-		max-height: calc(50vh + 180px);
-	}
 </style>

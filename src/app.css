@@ -7,3 +7,8 @@
 body {
 	font-family: 'IBM Plex Mono', monospace;
 }
+
+.article-body img {
+	object-fit: contain;
+	max-height: calc(50vh + 180px);
+}
