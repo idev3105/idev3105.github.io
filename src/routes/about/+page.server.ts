@@ -1,6 +1,6 @@
 import type { PageServerLoad } from '../$types';
 import blog from '@src/../blog.json';
-import { env } from '$env/dynamic/private';
+import { DEV_TO_API_KEY } from '$env/static/private';
 
 const gatherFollowerCount = async (): Promise<number> => {
 	const perPage = 100;
@@ -12,7 +12,7 @@ const gatherFollowerCount = async (): Promise<number> => {
 
 		const response = await fetch(url, {
 			headers: {
-				'api-key': env.DEV_TO_API_KEY || ''
+				'api-key': DEV_TO_API_KEY || ''
 			}
 		});
 
